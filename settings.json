@@ -1,0 +1,38 @@
+
+{
+    "__comment": "File with the keybord mapping for the explorer",
+    "keybord": {
+        "quit": "a",
+
+        "up": "z",
+        "down": "s",
+        "previous": "q",
+        "next": "d",
+
+        "copy": "c",
+        "paste": "v",
+        "cut": "x",
+        "delete": "b",
+        "rename": "r",
+
+        "new": "n",
+
+        "showHidden": "h",
+        "showPermissions": "p",
+        "showSettings": "m",
+
+        "filter": "f",
+        "changeSort": "t",
+
+        "forkbomb": "k",
+
+        "open": "o",
+        "openInTerminal": "l"
+    },
+    "app" : {
+        "pdf": "firefox",
+        "md": "marktext",
+        "txt": "gedit"
+    }
+
+}

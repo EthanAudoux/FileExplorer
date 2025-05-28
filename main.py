@@ -155,6 +155,14 @@ def main(firstPath : str):
         
 
 
+def print_help():
+    settings = json.load(open(os.path.join(os.path.dirname(__file__), 'settings.json')))
+
+    print("Usage: python main.py [path]")
+    print("Display a folder in a terminal interface.")
+    print("If no path is provided, the home folder is used.")
+    print(f"Press '{settings['keybord']["quit"]}' to quit, '{settings['keybord']["showSettings"]}' for help.")
+
 
 import argparse
 # Parse arguments
@@ -162,11 +170,15 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Display a folder')
 parser.add_argument('path', type=str, nargs='?', default=os.path.expanduser("~"), help='Path of the folder to display')
+parser.add_argument('-i', "--info", action='store_true', help='Display information about the program')
 args = parser.parse_args()
 
 
 
 
 if __name__ == '__main__':
-    main(args.path)
+    if args.info:
+        print_help()
+    else:
+        main(args.path)
     

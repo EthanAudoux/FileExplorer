@@ -14,3 +14,4 @@ A simple file explorer application built with Python.
 # Requirements
 - Python 3.x
 
+    

@@ -1,7 +1,7 @@
 
 {
     "__comment": "File with the keybord mapping for the explorer",
-    "keybord": {
+    "keyboard": {
         "quit": "a",
 
         "up": "z",

@@ -6,8 +6,7 @@ from .enumeration import SortFile
 class Node:
     
     def __init__(self, path : str):
-        self.path = path
-    
+        self.path = os.path.abspath(path)
     
     def get_path(self):
         return self.path
@@ -52,6 +51,7 @@ class Node:
             return ["Impossible to read the file"]
     
     def get_parent(self):
+        print(os.path.dirname(self.path), self.path)
         return Node(os.path.dirname(self.path))
 
 
@@ -63,8 +63,7 @@ class Node:
         
     def delete(self):
         #os.system(f'rm -r {self.get_path()}')
-
-            os.system(f'gio trash {self.get_path()}')
+        os.system(f'gio trash {self.get_path()}')
         
     def create_file(self, name):
         os.system(f'touch {os.path.join(self.get_path(), name)}')

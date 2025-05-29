@@ -13,7 +13,7 @@ class Display:
         self.clear = lambda: os.system("clear")
         
         self.settings = settings
-        self.keyboardMapping = settings['keybord']
+        self.keyboardMapping = settings['keyboard']
                 
         self.start_file : int
         self.end_file : int
@@ -124,7 +124,7 @@ class Display:
     def show_settings(self):
         self.clear()
         settings = json.load(open(os.path.join(os.path.dirname(__file__), '../settings.json')))
-        keyboardMapping = settings['keybord']
+        keyboardMapping = settings['keyboard']
         
         for i, command in enumerate(keyboardMapping):
             print(f'{command} : {keyboardMapping[command]}')

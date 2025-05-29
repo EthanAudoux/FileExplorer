@@ -73,7 +73,7 @@ class Cursor:
         self.node = self.node.get_parent()
         self.current = next((i for i, obj in enumerate(self.get_content()) if obj.get_name() == previous), 0)
 
-            
+
 
     def get_toggle_hidden(self):
         self.hiddens = not self.hiddens

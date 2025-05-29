@@ -148,12 +148,14 @@ class Display:
         
         if len(self.cursor.get_content(self.filter)) - max_rows < 0:
             self.start_file = 0
-        elif self.cursor.get_current_index() > len(self.cursor.get_content(self.filter)) - max_rows:
-           self.start_file = len(self.cursor.get_content(self.filter)) - max_rows
         
+        elif len(self.cursor.get_content(self.filter)) - self.cursor.get_current_index() <= max_rows:
+            self.start_file = len(self.cursor.get_content(self.filter)) - max_rows
+
         else:
-            self.start_file = self.cursor.get_current_index() - 2
+            self.start_file = max(0, self.cursor.get_current_index() - 2)
             
+
         self.end_file = self.start_file + max_rows
         if self.end_file > len(self.cursor.get_content(self.filter)):
             self.end_file = len(self.cursor.get_content(self.filter))            

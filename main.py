@@ -2,6 +2,7 @@ from class_utils.display import Display
 from class_utils.cursor import Cursor
 from class_utils.node import Node
 from class_utils.keys import Keys
+from class_utils.settings import *
 import class_utils.globals as globals
 
 from class_utils.enumeration import ModeCreationFile
@@ -170,7 +171,8 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Display a folder')
 parser.add_argument('path', type=str, nargs='?', default=os.path.expanduser("~"), help='Path of the folder to display')
-parser.add_argument('-i', "--info", action='store_true', help='Display information about the program')
+parser.add_argument('-i', '--info', action='store_true', help='Display information about the program')
+parser.add_argument('-s', '--settings', action='store_true', help='Display the settings of the program to change the keys mapping (in progress)')
 args = parser.parse_args()
 
 
@@ -179,6 +181,8 @@ args = parser.parse_args()
 if __name__ == '__main__':
     if args.info:
         print_help()
+    elif args.settings:
+        main_settings()
     else:
         main(args.path)
     
